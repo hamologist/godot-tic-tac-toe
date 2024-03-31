@@ -121,7 +121,7 @@ func check_for_win():
 				break
 	
 	# Check diagonal lines
-	if not winner and game_board[4] != MOVE_STATES.NONE:
+	if not winner and game_board[POSITIONS.MIDDLE] != MOVE_STATES.NONE:
 		if(
 			game_board[POSITIONS.TOP_LEFT] == game_board[POSITIONS.MIDDLE]
 			and game_board[POSITIONS.MIDDLE] == game_board[POSITIONS.BOTTOM_RIGHT]
