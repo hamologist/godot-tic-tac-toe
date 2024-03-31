@@ -123,17 +123,17 @@ func check_for_win():
 	# Check diagonal lines
 	if not winner and game_board[4] != MOVE_STATES.NONE:
 		if(
-			game_board[0] == game_board[4]
-			and game_board[4] == game_board[8]
+			game_board[POSITIONS.TOP_LEFT] == game_board[POSITIONS.MIDDLE]
+			and game_board[POSITIONS.MIDDLE] == game_board[POSITIONS.BOTTOM_RIGHT]
 		):
-			for button in [buttons[0], buttons[4], buttons[8]]:
+			for button in [buttons[POSITIONS.TOP_LEFT], buttons[POSITIONS.MIDDLE], buttons[POSITIONS.BOTTOM_RIGHT]]:
 				button.get_parent().add_child(generate_diagonal_line(DIAGONAL_DIRECTION.ONE))
 			winner = true
 		elif (
-			game_board[2] == game_board[4]
-			and game_board[4] == game_board[6]
+			game_board[POSITIONS.TOP_RIGHT] == game_board[POSITIONS.MIDDLE]
+			and game_board[POSITIONS.MIDDLE] == game_board[POSITIONS.BOTTOM_LEFT]
 		):
-			for button in [buttons[2], buttons[4], buttons[6]]:
+			for button in [buttons[POSITIONS.TOP_RIGHT], buttons[POSITIONS.MIDDLE], buttons[POSITIONS.BOTTOM_LEFT]]:
 				button.get_parent().add_child(generate_diagonal_line(DIAGONAL_DIRECTION.TWO))
 			winner = true
 	
