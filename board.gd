@@ -47,7 +47,6 @@ var current_players_turn: PLAYERS
 var game_board: Array
 var buttons: Array
 var game_state: GAME_STATES
-var added_nodes: Array
 
 func button_router(button: BaseButton): 
 	for pos in POSITIONS:
@@ -164,7 +163,6 @@ func handle_button_press(button: BaseButton):
 		current_players_turn = PLAYERS.ONE
 
 func _ready():
-	added_nodes = []
 	game_state = GAME_STATES.PLAYING
 	current_players_turn = PLAYERS.ONE
 	
